@@ -1,0 +1,22 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        ans=defaultdict(list)
+        for s in strs:
+          sorted_s=''.join(sorted(s)) #sorted(s) 拆分 join组成，形成dictkey
+          ans[sorted_s].append(s)
+        return list(ans.values())
+'''
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        #目标：字母相同但是顺序不同的 进行组合
+        ans=defaultdict(list)#访问不存在的key会创建空值
+        for s in strs:#遍历strs里面的字符串 
+            sorted_s = ''.join(sorted(s))
+            # sorted(s)字母顺序排序['a','e','t'] .join 连接在一起
+            ans[sorted_s].append(s)#加在字典里面
+            #ans[sorted_s]是key value是后面的s
+            #第一次 s="eat" → key="aet" → ans["aet"] = ["eat"]
+            #第二次 s="tea" → key="aet" → ans["aet"] = ["eat", "tea"]
+            #第三次 s="tan" → key="ant" → ans["ant"] = ["tan"]
+        return list(ans.values())
+'''
