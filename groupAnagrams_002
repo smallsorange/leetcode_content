@@ -1,9 +1,9 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        ans=defaultdict(list)
-        for s in strs:
-          sorted_s=''.join(sorted(s)) #sorted(s) 拆分 join组成，形成dictkey
-          ans[sorted_s].append(s)
+        ans=defaultdict(list)#建立默认字典
+        for s in strs:#遍历strs里面的
+          sorted_s=''.join(sorted(s)) #sorted(s) 拆分 join组成，.join连接这些字符形成dict的key
+          ans[sorted_s].append(s)#将s按照key加入到列表里面key是 apt s是 pat pat加入到apt这个key形成列表dict{[],[],[]}
         return list(ans.values())
 '''
 class Solution:
