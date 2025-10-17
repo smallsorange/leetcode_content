@@ -13,3 +13,4 @@ class Solution:
 #3.计算差值complements
 #4.判断 如果complements在hash字典里面就返回 补数索引和当前索引i
 #5.将数值key和索引value保存到字典里面 {num：i}
+#num_map[num]=i 字典的num（key）值对应的value是i
